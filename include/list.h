@@ -51,12 +51,12 @@ list_t *list_new_from_array(int *array, int length);
 
 /*
  * Function: list_destroy
- * Description: frees all nodes in the linked list
- * Input: list - a pointer to the list
+ * Description: frees all nodes and list
+ * Input: list - a pointer to the list pointer
  * Output: None
  * Return: None
  * */
-void list_destroy(list_t *list);
+void list_destroy(list_t **list);
 
 // =========================================
 // ===== list creation and destruction =====
@@ -109,6 +109,15 @@ bool list_popl(list_t *list);
  * Return: true if successful operation, false otherwise
  * */
 bool list_popr(list_t *list);
+
+/*
+ * Function: list_clear
+ * Description: destroy all node
+ * Input: list  - a pointer to the list
+ * Output: None
+ * Return: true if successful operation, false otherwise
+ * */
+bool list_clear(list_t *list);
 
 /* TODO: */
 int  list_value_at_l(list_t *list, int value);

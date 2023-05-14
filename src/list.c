@@ -36,17 +36,11 @@ list_t *list_new_from_array(int *array, int length) {
   return new_list;
 }
 
-void list_destroy(list_t *list) {
-  if (!list) return;
-  list_node_t *node = list->head;
-  while (node) {
-    list_node_t *to_be_destroy = node;
-    node = node->next;
-    list_node_destroy(to_be_destroy);
-  }
-  list->head = NULL;
-  list->tail = list->head;
-  list->length = 0;
+void list_destroy(list_t **list) {
+  if (!list || !(*list)) return;
+  list_clear(*list);
+  free(*list);
+  *list = NULL;
 }
 
 bool list_empty(list_t *list) {
@@ -97,6 +91,7 @@ bool list_popl(list_t *list) {
   } else {
     list_node_t *to_be_destroy = list->head;
     list->head = list->head->next;
+    list->head->prev = NULL;
     list_node_destroy(to_be_destroy);
   }
   list->length--;
@@ -112,8 +107,25 @@ bool list_popr(list_t *list) {
   } else {
     list_node_t *to_be_destroy = list->tail;
     list->tail = list->tail->prev;
+    list->tail->next = NULL;
     list_node_destroy(to_be_destroy);
   }
   list->length--;
+  return true;
+}
+
+bool list_clear(list_t *list) {
+  if (!list) return false;
+  list_node_t *node = list->head;
+
+  while (node) {
+    list_node_t *to_be_destroy = node;
+    node = node->next;
+    list_node_destroy(to_be_destroy);
+  }
+
+  list->head = NULL;
+  list->tail = list->head;
+  list->length = 0;
   return true;
 }

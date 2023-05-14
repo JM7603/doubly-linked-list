@@ -70,12 +70,13 @@ void test_list_init_push(void) {
   /* destroy list */
 #if 1
   printf("list destroy: \n");
-  list_destroy(list1);
-  printf("length of list1: %d\n", list1->length);
+  list_destroy(&list1);
+//  printf("length of list1: %d\n", list1->length);
+  printf("list is NULL: %s", list1 ? "false" : "true");
 #endif
 
   /* is empty */
 #if 1
-  printf("list empty: %s\n", list_empty(list1) ? "true" : "false");
+//  printf("list empty: %s\n", list_empty(list1) ? "true" : "false");
 #endif
 }
