@@ -119,10 +119,19 @@ bool list_popr(list_t *list);
  * */
 bool list_clear(list_t *list);
 
+/*
+ * Function: list_peek
+ * Description: get the value in the linked list with n - 1
+ * Input: list  - a pointer to the list
+ *        index - index
+ * Output: None
+ * Return: the value of the n - 1 element
+ * */
+int list_peek(list_t *list, int index);
+
 /* TODO: */
 int  list_value_at_l(list_t *list, int value);
 int  list_value_at_r(list_t *list, int value);
-int  list_peek(list_t *list, int index);
 bool list_insert(list_t *list, int index);
 bool list_modify_value(list_t *list, int index);
 bool list_move(list_t *list, int index);

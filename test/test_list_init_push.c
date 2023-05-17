@@ -62,6 +62,15 @@ void test_list_init_push(void) {
   printf("length of list1: %d\n\n", list1->length);
 #endif
 
+    /* peek */
+#if 1
+  printf("peek all: \n");
+  for (int i = 0; i < list1->length; ++i) {
+    printf("%d ", list_peek(list1, i));
+  }
+  putchar('\n');
+#endif
+
   /* is empty */
 #if 1
   printf("list empty: %s\n", list_empty(list1) ? "true" : "false");

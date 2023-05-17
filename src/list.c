@@ -6,6 +6,7 @@
  * */
 
 #include <malloc.h> // malloc
+#include <stdlib.h>
 
 #include "../include/list.h"
 
@@ -128,4 +129,17 @@ bool list_clear(list_t *list) {
   list->tail = list->head;
   list->length = 0;
   return true;
+}
+
+int list_peek(list_t *list, int index) {
+  if (!list) exit(-1);
+  if (index < 0 || index > list->length - 1) exit(-1);
+  if (index == 0) return list->head->value;
+  if (index == list->length - 1) return list->tail->value;
+
+  list_node_t *node = list->head;
+  while (index-- > 0) {
+    node = node->next;
+  }
+  return node->value;
 }
