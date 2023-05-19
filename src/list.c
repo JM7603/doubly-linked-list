@@ -6,7 +6,7 @@
  * */
 
 #include <malloc.h> // malloc
-#include <stdlib.h>
+#include <stdlib.h> // exit
 
 #include "../include/list.h"
 
