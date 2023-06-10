@@ -17,7 +17,6 @@ here are the functions to be implemented
 /* TODO(list.h -> list.c): */
 int  list_value_at_l(list_t *list, int value);
 int  list_value_at_r(list_t *list, int value);
-int  list_peek(list_t *list, int index);
 bool list_insert(list_t *list, int index);
 bool list_modify_value(list_t *list, int index);
 bool list_move(list_t *list, int index);

@@ -9,13 +9,12 @@
 #define DOUBLY_LINKED_LIST__LIST_NODE_H_
 
 typedef struct list_node {
-  int value;
-  struct list_node *prev;
-  struct list_node *next;
+	int value;
+	struct list_node* prev;
+	struct list_node* next;
 } list_node_t;
 
-
-list_node_t *list_node_new(int value);
-void list_node_destroy(list_node_t *node);
+list_node_t* list_node_new(int value);
+void list_node_destroy(list_node_t* node);
 
 #endif //DOUBLY_LINKED_LIST__LIST_NODE_H_

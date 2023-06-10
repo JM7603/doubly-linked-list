@@ -8,8 +8,9 @@
 /* from `test/test_list_init_push.c` */
 extern void test_list_init_push(void);
 
-int main(int argc, char **argv) {
-  test_list_init_push();
+int main(int argc, char** argv)
+{
+	test_list_init_push();
 
-  return 0;
+	return 0;
 }
